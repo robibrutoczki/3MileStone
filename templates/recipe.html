@@ -1,0 +1,48 @@
+{% extends 'base.html'%} {% block content %} {% for recipe in recipes %}
+
+<div class="jumbotron jumbotron-fluid mt-5 p-2">
+  <div class="container">
+    <h1 class="display-4">{{recipe.recipe_name}}</h1>
+
+    <div class="row text-center">
+      <div class="col-sm-6 mb-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{recipe.recipe_name}}</h5>
+            <h5 class="card-title">
+              <i class="medium material-icons">timelapse</i
+              >{{recipe.recipe_diff}}
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>Method</h5>
+            <h5 class="card-title">
+              <i class="medium material-icons">restaurant</i
+              >{{recipe.recipe_diff}}
+            </h5>
+            <p class="card-text">
+              {{recipe.recipe_ingrediens}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+        class="btn btn-primary mr-2"
+        >Delete</a
+      >
+      <a
+        href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
+        class="btn btn-primary"
+        >Edit</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endfor %} {% endblock %}
