@@ -1,8 +1,8 @@
 {% extends 'base.html'%} {% block content %}
 
-<div class="jumbotron">
-  <div class="row">
-    <h3 class="mb-2">Edit Recipes</h3>
+<div class="jumbotron mt-5">
+  <div class="row ">
+    <h3 class="m-2 ">Edit Recipes</h3>
   </div>
 
   <form
@@ -11,7 +11,7 @@
     class="col-12 mt-2"
   >
     <div class="row">
-      <div class="form-group col-6">
+      <div class="form-group col-md-6">
       <label>Recipe Category</label>
         <select id="category" name="category_name" class="form-control">
           <option value="" disabled selected>Choose Category</option>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field col-6">
+      <div class="input-field col-md-6">
         <label for="icon_prefix">Recipe Name</label>
         <input
           id="task_name"
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field col-6">
+      <div class="input-field col-md-6">
         <label for="icon_prefix">Cooking time</label>
         <input
           id="recipe_time"
@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field col-6">
+      <div class="input-field col-md-6">
       <label for="icon_telephone">Method</label>
         <textarea
           name="recipe_met"
@@ -67,7 +67,7 @@
       </div>
     </div>
       <div class="row">
-      <div class="input-field col-6">
+      <div class="input-field col-md-6">
       <label for="icon_telephone">Recipe Ingredients</label>
         <textarea
           name="recipe_ingrediens"
@@ -78,7 +78,25 @@
         >
         
       </div>
+     </div>
+
+      <div class="row">
+      <div class="input-field col-md-6">
+        <label for="icon_prefix">Picture Url</label>
+        <input
+          id="recipe_url"
+          name="recipe_url"
+          type="text"
+          class="validate form-control"
+          value="{{recipe.recipe_url}}"
+          placeholder="Add picture URL here"/>
+        
+      </div>
     </div>
+
+
+
+     <div class="row">
     <div class="form-group col-md-6">
       <label for="inputState">Difficulty</label>
       <select name="recipe_diff" id="recipe_diff" class="form-control">
@@ -87,12 +105,12 @@
         <option>Medium</option>
         <option>Hard</option>
       </select>
-    </div>
+    </div></div>
 
     <div class="row">
-      <button class="btn waves-effect waves-light" type="submit" name="action">
+      <button class="btn btn-primary" type="submit" name="action">
         Edit Recipe
-        <i class="material-icons right">playlist_add</i>
+       
       </button>
     </div>
   </form>

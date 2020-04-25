@@ -2,7 +2,7 @@
 
 
 
-<div class="jumbotron mt-2">
+<div class="jumbotron mt-5">
   <form action="{{ url_for('insert_recipe') }}" method="POST" >  
   <h3>Add Recipe</h3>   
     <div class="form-row">
@@ -45,6 +45,15 @@
           <option>Hard</option>
       </select>
       </div> 
+      
+<div class="form-group col-md-6">
+      <label for="inputAddress">Picture url</label>
+      <input
+        type="text"
+        class="form-control"
+        id="recipe_url" name="recipe_url" 
+        placeholder="Add picture url here"/>
+    </div>
 
 <div class="form-group col-md-12">
         <label for="inputZip">Ingredients</label>

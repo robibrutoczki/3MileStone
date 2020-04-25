@@ -2,10 +2,11 @@
 
 <div class="row  m-auto">
 <div class="col-12">
+<div class="jumbotron mt-5"> 
 	<h3>Categories</h3>
 	
 		{% for category in categories %}
-        
+       
 <ul class="list-group ">
   <li class="list-group-item ">
   <p class=""><strong>{{category.category_name}}</strong></p>
@@ -17,8 +18,13 @@
    {% endfor%}
 <li class="list-group-item ">
 	<a href="{{url_for('add_category')}}" class="btn btn-primary">
-		<i class="material-icons right">playlist_add</i>Add Category
-	</a></li>
+		<i class="material-icons small right">add</i>Add Category
+	</a>
+    	<a href="{{ url_for('get_recipes') }}" class="btn btn-primary m-2">
+				Cancel
+			</a></li>
+ 
+ 
  </ul>
-</div>
+</div></div>
 {% endblock %}

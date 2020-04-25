@@ -5,8 +5,7 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'MyRbook'
-app.config["MONGO_URI"] = 'mongodb+srv://paswordr@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
-
+app.config["MONGO_URI"] = 'mongodb+srv://root:@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
@@ -54,7 +53,9 @@ def update_recipe(recipe_id):
         'recipe_ingrediens': request.form.get('recipe_ingrediens'),
         'recipe_diff': request.form.get('recipe_diff'),
         'recipe_met': request.form.get('recipe_met'),
-        'recipe_time': request.form.get('recipe_time')
+        'recipe_time': request.form.get('recipe_time'),
+        'recipe_url': request.form.get('recipe_url')
+
     })
     return redirect(url_for('get_recipes'))
 

@@ -1,11 +1,4 @@
-body{background-color: rgb(250, 168, 195);}
-.btn_small {
-    height: 24px;
-    width: 60px;
-    line-height: 24px;
-    margin: 5px 5px;
-    padding: 0 0.5em;
-}
+body{background-color: rgb(110, 163, 241);}
 
 .task_header {
     margin-top: 15px;

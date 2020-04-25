@@ -1,32 +1,28 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h3>Edit Category</h3>
-<div class="row">
-	<form action="{{ url_for('update_category', category_id=category._id) }}" method="POST" class="col s12">
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="material-icons prefix">poll</i>
-				<input id="category_name" name="category_name" type="text" class="validate" value="{{category.category_name}}">
+<div class="jumbotron mt-5">
+  <div class="row ">
+    <h3 class="ml-4 mb-2">Edit Categories</h3>
+  
+
+	<form action="{{ url_for('update_category', category_id=category._id) }}" method="POST" class="col-12">
+	
+			<div class="input-field col-md-6 mb-2">
 				<label for="category_name">Category Name</label>
+				<input id="category_name" name="category_name" type="text" class="validate form-control" value="{{category.category_name}}" >
+				
 			</div>
-		</div>
-		<div class="row">
-			<button class="btn waves-effect waves-light" type="submit" name="action">Save Changes
-                <i class="material-icons right">playlist_add</i>
+	
+		
+			<button class="btn btn-primary ml-3" type="submit" name="action">Save Changes
+               
              </button>
-			<a href="{{ url_for('get_categories') }}" class="waves-effect waves-light btn grey">
-				<i class="material-icons right">cancel</i>Cancel
+			<a href="{{ url_for('get_categories') }}" class="btn btn-primary m-2">
+				Cancel
 			</a>
-		</div>
+	
 	</form>
 </div>
-<ul class="list-unstyled">
-  <li class="media">
-    <img class="mr-3" src="..." alt="Generic placeholder image">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">List-based media object</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-  </li></ul>
+
 {% endblock %}
