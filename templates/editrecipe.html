@@ -1,7 +1,7 @@
 {% extends 'base.html'%} {% block content %}
 
-<div class="jumbotron mt-5">
-  <div class="row ">
+<div class="jumbotron mt-5 col-12">
+  <div class="row col-12">
     <h3 class="m-2 ">Edit Recipes</h3>
   </div>
 
@@ -11,7 +11,7 @@
     class="col-12 mt-2"
   >
     <div class="row">
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-12">
       <label>Recipe Category</label>
         <select id="category" name="category_name" class="form-control">
           <option value="" disabled selected>Choose Category</option>
@@ -29,7 +29,7 @@
     </div>
     <div class="row">
       <div class="input-field col-md-6">
-        <label for="icon_prefix">Recipe Name</label>
+        <label for="icon_prefix">Recipe Name :</label>
         <input
           id="task_name"
           name="recipe_name"
@@ -42,7 +42,7 @@
     </div>
     <div class="row">
       <div class="input-field col-md-6">
-        <label for="icon_prefix">Cooking time</label>
+        <label for="icon_prefix">Cooking time :</label>
         <input
           id="recipe_time"
           name="recipe_time"
@@ -53,9 +53,36 @@
         
       </div>
     </div>
+      <div class="row">
+      <div class="input-field col-md-6">
+        <label for="icon_prefix">Serves 4 ?</label>
+        <input
+          id="recipe_serv"
+          name="recipe_serv"
+          type="number"
+          class="validate form-control"
+          value="{{recipe.recipe_serv}}"
+          placeholder="Serves 4 ?"/>
+        
+      </div>
+    </div>
+
+   <div class="row">
+      <div class="input-field col-md-6">
+      <label for="icon_telephone">Recipe Ingredients :</label>
+        <textarea
+          name="recipe_ingrediens"
+          id="recipe_ingrediens"
+          class="form-control">
+{{recipe.recipe_ingrediens}}</textarea>
+        
+      </div>
+     </div>
+
+
     <div class="row">
       <div class="input-field col-md-6">
-      <label for="icon_telephone">Method</label>
+      <label for="icon_telephone">Method :</label>
         <textarea
           name="recipe_met"
           id="recipe_met"
@@ -66,19 +93,7 @@
         
       </div>
     </div>
-      <div class="row">
-      <div class="input-field col-md-6">
-      <label for="icon_telephone">Recipe Ingredients</label>
-        <textarea
-          name="recipe_ingrediens"
-          id="recipe_ingrediens"
-          class="form-control"
-        >
-{{recipe.recipe_ingrediens}}</textarea
-        >
-        
-      </div>
-     </div>
+   
 
       <div class="row">
       <div class="input-field col-md-6">
@@ -98,7 +113,7 @@
 
      <div class="row">
     <div class="form-group col-md-6">
-      <label for="inputState">Difficulty</label>
+      <label for="inputState">Difficulty :</label>
       <select name="recipe_diff" id="recipe_diff" class="form-control">
         <option selected>Easy</option>
         <option>Easy</option>
@@ -107,12 +122,28 @@
       </select>
     </div></div>
 
-    <div class="row">
+ <div class="row">
+    <div class="form-group col-md-6">
+      <label for="inputState">Rate :</label>
+      <select name="recipe_rate" id="recipe_rate" class="form-control">
+        <option selected>5</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div></div>
+    
       <button class="btn btn-primary" type="submit" name="action">
-        Edit Recipe
+        Save Recipe
        
       </button>
-    </div>
+     
+    
+    <a href="{{ url_for('get_recipes') }}" class="btn btn-primary m-2">
+				Cancel
+			</a>
   </form>
 </div>
 

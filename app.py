@@ -2,12 +2,14 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'MyRbook'
-app.config["MONGO_URI"] = 'mongodb+srv://root:@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://rootr@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
+datetime_now = datetime.now()  # pass this to a MongoDB doc
 
 
 @app.route('/')
@@ -19,7 +21,8 @@ def get_recipes():
 
 @app.route('/get_index')
 def get_index():
-    return render_template("index.html")
+    return render_template("index.html",
+                           recipes=mongo.db.recipes.find())
 
 
 @app.route('/add_recipe')
@@ -54,8 +57,9 @@ def update_recipe(recipe_id):
         'recipe_diff': request.form.get('recipe_diff'),
         'recipe_met': request.form.get('recipe_met'),
         'recipe_time': request.form.get('recipe_time'),
-        'recipe_url': request.form.get('recipe_url')
-
+        'recipe_url': request.form.get('recipe_url'),
+        'recipe_serv': request.form.get('recipe_serv'),
+        'recipe_rate': request.form.get('recipe_rate')
     })
     return redirect(url_for('get_recipes'))
 
@@ -102,6 +106,15 @@ def insert_category():
 @app.route('/add_category')
 def add_category():
     return render_template('addcategory.html')
+
+
+@app.route('/show_recipe/<recipe_id>/')
+def show_recipe(recipe_id):
+    """
+    The view that displays recipe information based on the recipe ID.
+    """
+    recipe_id = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("showOne.html", recipe=recipe_id)
 
 
 if __name__ == '__main__':
