@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'MyRbook'
-app.config["MONGO_URI"] = 'mongodb+srv://rootr@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://root:r@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 datetime_now = datetime.now()  # pass this to a MongoDB doc
@@ -17,6 +17,33 @@ datetime_now = datetime.now()  # pass this to a MongoDB doc
 def get_recipes():
     return render_template("recipe.html",
                            recipes=mongo.db.recipes.find())
+
+
+@app.route('/find_recipe')
+def find_recipe():
+    return render_template("searchrecipe.html",
+                           recipes=mongo.db.recipes.find())
+
+
+@app.route('/search_recipe/<difficulty>', methods=['GET', 'POST'])
+def search_recipe_by_difficulty(difficulty):
+    db_query = {'difficulty': difficulty}
+    recipe_by_difficulty = mongo.db.recipes.find(
+        db_query).sort([("upvotes", -1)])
+    results_total = mongo.db.recipes.count(db_query)
+    return render_template("recipe_by_difficulty.html",
+                           recipes=recipe_by_difficulty,
+                           results_total=results_total)
+
+
+@app.route('/look_for_recipe/<cooking_time>', methods=['GET', 'POST'])
+def search_recipe_by_time(cooking_time):
+    db_query = {'cooking_time': cooking_time}
+    recipe_by_time = mongo.db.recipes.find(db_query).sort([("upvotes", -1)])
+    results_total = mongo.db.recipes.count(db_query)
+    return render_template("recipe_by_time.html",
+                           recipes=recipe_by_time,
+                           results_total=results_total)
 
 
 @app.route('/get_index')
@@ -115,6 +142,21 @@ def show_recipe(recipe_id):
     """
     recipe_id = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("showOne.html", recipe=recipe_id)
+
+
+@app.route('/get_shop')
+def get_shop():
+    return render_template("shop.html",
+                           shop=mongo.db.shop.find())
+
+
+@app.route('/show_item/<item_id>/')
+def show_item(item_id):
+    """
+    The view that displays recipe information based on the recipe ID.
+    """
+    item_id = mongo.db.shop.find_one({"_id": ObjectId(item_id)})
+    return render_template("showItem.html", item=item_id)
 
 
 if __name__ == '__main__':
