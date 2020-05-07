@@ -29,7 +29,7 @@
  <div class="form-group col-md-6">
       <label for="inputAddress">Cooking time</label>
       <input
-        type="text"
+        type="number"
         class="form-control"
         id="recipe_time" name="recipe_time" 
         placeholder="Cooking time"/>
@@ -38,9 +38,9 @@
 <div class="form-group col-md-6">
       <label for="inputAddress">Serves 4 or less ?</label>
       
-         <select name="recipe_serv"  type="number"
+         <select name="recipe_serv"  type="text"
           id="recipe_serv" class="form-control">
-        <option selected>Add number </option>
+        <option disabled>Add number </option>
         <option>2</option>
          <option>4</option>
           <option>6</option>

@@ -3,6 +3,7 @@
 <div class="container">
 <div class="row">
 <div class="jumbotron jumbotron-fluid col-12 mt-5 text-center">
+
   <div class="container text-center">
   <img src="{{recipe.recipe_url}}" class="card-img-top col-md-7" alt="Nice picture of food should be here.."  data-toggle="collapse" data-target="#{{recipe.recipe_name}}">
     <h1 class="display-4" id="namepoint" data-toggle="collapse" data-target="#{{recipe.recipe_name}}">{{recipe.recipe_name}}</h1>
@@ -21,7 +22,7 @@
             </h5>
             <h5 class="card-title">
               <i class="small material-icons mr-1">group</i
-              >Serves  {{recipe.recipe_serv}}
+              >Serves  {{recipe.recipe_serv}} person
             </h5>
             <p class="card-text">
               {{recipe.recipe_ingrediens}}
@@ -35,7 +36,7 @@
             <h3>Method :</h3>
             <h5 class="card-title">
               <i class="small material-icons mr-1">access_time</i
-              >{{recipe.recipe_time}}
+              >{{recipe.recipe_time}} minutes
             </h5>
             <p class="card-text">
               {{recipe.recipe_met}}

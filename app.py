@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'MyRbook'
-app.config["MONGO_URI"] = 'mongodb+srv://root:r@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://root:@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 datetime_now = datetime.now()  # pass this to a MongoDB doc
@@ -23,27 +23,6 @@ def get_recipes():
 def find_recipe():
     return render_template("searchrecipe.html",
                            recipes=mongo.db.recipes.find())
-
-
-@app.route('/search_recipe/<difficulty>', methods=['GET', 'POST'])
-def search_recipe_by_difficulty(difficulty):
-    db_query = {'difficulty': difficulty}
-    recipe_by_difficulty = mongo.db.recipes.find(
-        db_query).sort([("upvotes", -1)])
-    results_total = mongo.db.recipes.count(db_query)
-    return render_template("recipe_by_difficulty.html",
-                           recipes=recipe_by_difficulty,
-                           results_total=results_total)
-
-
-@app.route('/look_for_recipe/<cooking_time>', methods=['GET', 'POST'])
-def search_recipe_by_time(cooking_time):
-    db_query = {'cooking_time': cooking_time}
-    recipe_by_time = mongo.db.recipes.find(db_query).sort([("upvotes", -1)])
-    results_total = mongo.db.recipes.count(db_query)
-    return render_template("recipe_by_time.html",
-                           recipes=recipe_by_time,
-                           results_total=results_total)
 
 
 @app.route('/get_index')
@@ -144,6 +123,39 @@ def show_recipe(recipe_id):
     return render_template("showOne.html", recipe=recipe_id)
 
 
+@app.route('/search_recipe/<recipe_diff>', methods=['GET', 'POST'])
+def search_by_diff(recipe_diff):
+    db_query = {'recipe_diff': recipe_diff}
+    recipe_by_difficulty = mongo.db.recipes.find(
+        db_query).sort([("recipe_name", -1)])
+    results_total = mongo.db.recipes.count(db_query)
+    return render_template("searchdiff.html",
+                           recipes=recipe_by_difficulty,
+                           results_total=results_total)
+
+
+@app.route('/find_recipe_rate/<recipe_rate>', methods=['GET', 'POST'])
+def search_by_rate(recipe_rate):
+    db_query = {'recipe_rate': recipe_rate}
+    recipe_by_rate = mongo.db.recipes.find(
+        db_query).sort([("recipe_name", -1)])
+    results_total = mongo.db.recipes.count(db_query)
+    return render_template("searchrate.html",
+                           recipes=recipe_by_rate,
+                           results_total=results_total)
+
+
+@app.route('/find_recipe_serv/<recipe_serv>', methods=['GET', 'POST'])
+def search_by_serv(recipe_serv):
+    db_query = {'recipe_serv': recipe_serv}
+    recipe_by_serv = mongo.db.recipes.find(
+        db_query)
+    results_total = mongo.db.recipes.count(db_query)
+    return render_template("searchrate.html",
+                           recipes=recipe_by_serv,
+                           results_total=results_total)
+
+
 @app.route('/get_shop')
 def get_shop():
     return render_template("shop.html",
@@ -158,6 +170,9 @@ def show_item(item_id):
     item_id = mongo.db.shop.find_one({"_id": ObjectId(item_id)})
     return render_template("showItem.html", item=item_id)
 
+@app.route('/see charts')
+def see_charts():
+    return render_template('chart .html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

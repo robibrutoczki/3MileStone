@@ -1,6 +1,9 @@
 
+
 body{background-color:#F8F7F5;}
+
 .nav{height: 50px;}
+
 .container{background-color: #F2E3D3;
     color:#212323}
 
@@ -34,7 +37,7 @@ border-radius: 15px solid #212222;}
 
 /* Modal */
 
-.modal{width: 50vw;}
+.modal{ width: 100vw;}
 
 /*FOOTER*/
 

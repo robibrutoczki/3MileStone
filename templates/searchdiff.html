@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+<div class="row">
+<div class="jumbotron jumbotron-fluid col-12 mt-5 text-center">
+ <div class="mb-4">
+            {% if results_total < 2 %}
+                <h3 class="results-text">{{results_total}} recipe found</h3>
+            {% else %}
+                <h3 class="results-text">{{results_total}} recipes found</h3>
+            {% endif %}
+    </div>
+    
+    <div class="card-columns">
+        {% for recipe in recipes %}
+       <div class="card text-center">
+        <img class="card-img-top" src="{{ recipe.recipe_url }}" alt="Card image cap">
+        <div class="card-body">
+             <h5 class="card-title">{{ recipe.recipe_name }}</h5>
+        
+
+    <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Show recipe</a>
+  </div>
+</div> {% endfor %}
+</div>
+</div>
+ </div>
+
+{% endblock %}

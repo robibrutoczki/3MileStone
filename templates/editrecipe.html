@@ -46,7 +46,7 @@
         <input
           id="recipe_time"
           name="recipe_time"
-          type="text"
+          type="number"
           class="validate form-control"
           value="{{recipe.recipe_time}}"
           placeholder="10 mins"/>
@@ -54,17 +54,17 @@
       </div>
     </div>
       <div class="row">
-      <div class="input-field col-md-6">
-        <label for="icon_prefix">Serves 4 ?</label>
-        <input
-          id="recipe_serv"
-          name="recipe_serv"
-          type="number"
-          class="validate form-control"
-          value="{{recipe.recipe_serv}}"
-          placeholder="Serves 4 ?"/>
+      <div class="form-group col-md-6">
+      <label for="inputAddress">Serves 4 or less ?</label>
+      
+         <select name="recipe_serv"  type="text"
+          id="recipe_serv" class="form-control" placeholder="Add number">
         
-      </div>
+        <option>2</option>
+         <option>4</option>
+          <option>6</option>
+      </select>
+    </div>
     </div>
 
    <div class="row">

@@ -6,7 +6,7 @@
         <div class="jumbotron text-center">
         <div class="card-columns">
           {% for recipe in recipes %}
-
+         
           <div class="card rounded">
             <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
               <img
@@ -26,6 +26,7 @@
               >
             </div>
           </div>
+       
           {% endfor %}
         </div></div>
       </div>
