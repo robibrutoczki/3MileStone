@@ -1,14 +1,16 @@
 import os
+from os import path
 from datetime import datetime
 from bson.objectid import ObjectId
 from flask_pymongo import PyMongo
 from flask import Flask, render_template, redirect, request, url_for
-
+if path.exists("env.py"):
+    import env
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'MyRbook'
-app.config["MONGO_URI"] = 'mongodb+srv://root:SECRET_KEY@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
 
+app.config["MONGO_DBNAME"] = os.environ.get('MY_DB')
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 mongo = PyMongo(app)
 datetime_now = datetime.now()  # pass this to a MongoDB doc
 
