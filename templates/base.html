@@ -37,7 +37,7 @@
     <div class="container-fluid">
       
       <nav class="navbar navbar-expand-lg navbar-light bg-light mt-5">
-        <a class="navbar-brand mx-auto"  href="{{url_for('get_recipes')}}">
+        <a class="navbar-brand mx-auto" id="navbar"  href="{{url_for('get_recipes')}}">
         <img class="d-block w-100" src="{{url_for('static', filename='img/MyKitcheN100.png')}}" alt="Logo"/></a>
         <button
 class="navbar-toggler"
@@ -131,6 +131,38 @@ class="navbar-toggler"
               <ul class="navbar-nav m-2">
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('see_charts')}}">Charts</a>
+            </li>
+          </ul>
+         
+              <ul class="navbar-nav ml-10">
+            <li class="nav-item">
+            <!-- Button trigger modal -->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trolley">
+<i class="material-icons">shopping_cart</i>
+
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="trolley" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
             </li>
           </ul>
         </div>
@@ -259,25 +291,27 @@ class="navbar-toggler"
 <!-- End of CAROUSEL-->
     <div class="container">
       {% block content %} {% endblock %}
+
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-  
+      crossorigin="anonymous">
+      </script>
+     
+
+   
 <footer class="mainfooter" role="contentinfo">
   <div class="footer-middle">
   <div class="container">
@@ -296,36 +330,10 @@ class="navbar-toggler"
           </ul>
         </div>
       </div>
+   
       <div class="col-md-3 col-sm-6">
         <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 2</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Website Tutorial</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Disclaimer</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Webmaster</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 3</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Parks and Recreation</a></li>
-            <li><a href="#">Public Works</a></li>
-            <li><a href="#">Police Department</a></li>
-            <li><a href="#">Fire</a></li>
-            <li><a href="#">Mayor and City Council</a></li>
-            <li>
-              <a href="#"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
+       
     	<div class="col-md-3">
     		<h4>Follow Us</h4>
             <ul class="social-network social-circle">
@@ -344,5 +352,11 @@ class="navbar-toggler"
   </div>
   </div>
 </footer>
+ <!--UP BUTTON-->
+  <div class="fixed-bottom">
+ <a type="action" href="#navbar" id="up" class="btn btn-primary float-right m-2"><i class="material-icons p-2">expand_less</i>
+
+</a>
+ </div>
   </body>
 </html>
