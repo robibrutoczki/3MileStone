@@ -1,12 +1,13 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
 from datetime import datetime
+from bson.objectid import ObjectId
+from flask_pymongo import PyMongo
+from flask import Flask, render_template, redirect, request, url_for
+
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'MyRbook'
-app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://root:SECRET_KEY@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 datetime_now = datetime.now()  # pass this to a MongoDB doc
@@ -174,6 +175,7 @@ def show_item(item_id):
 @app.route('/see charts')
 def see_charts():
     return render_template('chart.html')
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
