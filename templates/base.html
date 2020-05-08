@@ -32,12 +32,13 @@
 
   
   <body>
+
     <!-- -NAVBAR- -->
     <div class="container-fluid">
       
       <nav class="navbar navbar-expand-lg navbar-light bg-light mt-5">
         <a class="navbar-brand mx-auto"  href="{{url_for('get_recipes')}}">
-        <img class="d-block w-100" src="../static/img/MyKitcheN100.png" alt="Logo"/></a>
+        <img class="d-block w-100" src="{{url_for('static', filename='img/MyKitcheN100.png')}}" alt="Logo"/></a>
         <button
 class="navbar-toggler"
           type="button"
@@ -60,12 +61,17 @@ class="navbar-toggler"
                 >Home <span class="sr-only">(current)</span></a>
             </li>
           </ul>
+
+           <ul class="navbar-nav m-2">
+             <li class="nav-item">
+              <a class="nav-link" href="{{url_for('get_index')}}">All recipes</a>
+            </li>
+          </ul>
+
            <ul class="navbar-nav m-2">
             <li class="nav-item">
-<!-- Button trigger modal -->
-<a type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
-  Search Recipes
-</a>
+        <!-- Button trigger modal -->
+           <a type="button" class="" data-toggle="modal" data-target="#exampleModalCenter">Search Recipes</a>
       </li>
           </ul>
 
@@ -80,9 +86,7 @@ class="navbar-toggler"
                 >Manage categories</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('get_index')}}">All recipes</a>
-            </li>
+           
     
    <li class="nav-item dropdown">
               <a
@@ -92,10 +96,7 @@ class="navbar-toggler"
                 role="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
-                aria-expanded="false"
-              >
-               Sign in
-              </a>
+                aria-expanded="false">Sign in</a>
               <div class="dropdown-menu">
   <form class="px-4 py-3">
     <div class="form-group">
@@ -122,15 +123,14 @@ class="navbar-toggler"
 </ul>
   
            <ul class="navbar-nav m-2">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{{url_for('get_shop')}}"
-                >Shop <span class="sr-only">(current)</span></a>
+                >Shop </a>
             </li>
           </ul>
               <ul class="navbar-nav m-2">
-            <li class="nav-item active">
-              <a class="nav-link" href="{{url_for('see_charts')}}"
-                >Charts<span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('see_charts')}}">Charts</a>
             </li>
           </ul>
         </div>

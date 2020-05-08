@@ -21,8 +21,8 @@ body{background-color:#F8F7F5;}
 
    
       
-      .btn:hover {
-        background-color:#E2DCC3; /* Green */
+.btn:hover {
+        background-color:#E2DCC3;
         color: #212323;
         border: 2px solid #a1a8a8;}
         

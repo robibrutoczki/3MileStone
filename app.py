@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'MyRbook'
-app.config["MONGO_URI"] = 'mongodb+srv://root:@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-pncmp.mongodb.net/MyRbook?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 datetime_now = datetime.now()  # pass this to a MongoDB doc
@@ -170,9 +170,10 @@ def show_item(item_id):
     item_id = mongo.db.shop.find_one({"_id": ObjectId(item_id)})
     return render_template("showItem.html", item=item_id)
 
+
 @app.route('/see charts')
 def see_charts():
-    return render_template('chart .html')
+    return render_template('chart.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

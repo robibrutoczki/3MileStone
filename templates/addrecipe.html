@@ -21,9 +21,9 @@
       <label for="inputAddress">Recipe Name</label>
       <input
         type="text"
-        class="form-control"
+        class="form-control validate"
         id="recipe_name" name="recipe_name" 
-        placeholder="Recipe"/>
+        placeholder="Recipe" required />
     </div>
 
  <div class="form-group col-md-6">
@@ -39,7 +39,7 @@
       <label for="inputAddress">Serves 4 or less ?</label>
       
          <select name="recipe_serv"  type="text"
-          id="recipe_serv" class="form-control">
+          id="recipe_serv" class="form-control validate" required>
         <option disabled>Add number </option>
         <option>2</option>
          <option>4</option>
@@ -49,7 +49,7 @@
     <div class="form-group col-md-6">
 <label for="inputState">Difficulty</label>
       <select name="recipe_diff"
-          id="recipe_diff" class="form-control">
+          id="recipe_diff" class="form-control validate" required>
         <option selected>Choose...</option>
         <option>Easy</option>
          <option>Medium</option>
@@ -74,7 +74,7 @@
 
       <div class="form-group col-md-12">
         <label for="inputZip">Method</label>
-        <textarea type="textarea" class="form-control"  name="recipe_met"
+        <textarea type="textarea" class="form-control validate" required  name="recipe_met"
           id="recipe_met" ></textarea>
       </div>
     </div>
