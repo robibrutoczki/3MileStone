@@ -1,12 +1,12 @@
 {% extends 'base.html'%} {% block content %} 
 
 
-<div class="container mt-5">
+<div class="container mb-1">
 <div class="row">
-<div class="jumbotron jumbotron-fluid col-12 mt-5 text-center">
-  <div class="container text-center">
+<div class="jumbotron jumbotron-fluid col-12 text-center">
+  <div class="container text-center ">
   <!--Carousel-->
-  <div id="carouselExampleControls" class="carousel col-8 mx-auto slide" data-ride="carousel">
+  <div id="carouselExampleControls" class="carousel col-12 mx-auto slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="{{item.item_img}}" alt="First slide">
@@ -15,7 +15,7 @@
       <img class="d-block w-100" src="{{item.item_img2}}" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{item.item_img3}}" alt="Third slide">
+      <img class="d-block w-100" src="{{item.item_img}}" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -28,8 +28,29 @@
   </a>
 </div>
   <!--End of carousel-->
+  <div data-spy="scroll" data-toggle="modal" data-target="#popup" data-offset="0">
+  <!-- Modal -->
+<div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     <h1 class="display-4" id="namepoint"  data-target="#{{item.iteme_name}}">{{item.item_name}}</h1>
-    <h4 class="display-6 mb-2">Product price £{{item.item_price}}</h4>
+    <h4 class="display-6 mb-2">Product price: £{{item.item_price}}</h4>
  
     <div id="{{item.item_name}}">
      <div class="row">
@@ -52,6 +73,6 @@
        </div>
     </div>
   </div>
-</div></div></div>
+</div></div></div></div>
 
 {% endblock %}

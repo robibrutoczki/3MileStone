@@ -1,48 +1,39 @@
 {% extends 'base.html'%} {% block content %}
 
-<div class="jumbotron mt-5 col-12">
-  <div class="row col-12">
-    <h3 class="m-2 ">Edit Recipes</h3>
-  </div>
+<div class="jumbotron mt-1 col-12">
+  <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
+    <h3>Edit Recipes</h3>
+     <div class="form-row">
 
-  <form
-    action="{{ url_for('update_recipe', recipe_id=recipe._id) }}"
-    method="POST"
-    class="col-12 mt-2"
-  >
-    <div class="row">
-      <div class="form-group col-md-12">
+    <div class="form-group col-md-6">
       <label>Recipe Category</label>
-        <select id="category" name="category_name" class="form-control">
-          <option value="" disabled selected>Choose Category</option>
+         <select id="category" name="category_name" class="form-control">
+            <option value="" disabled selected>Choose Category</option>
+
           {% for cat in categories %} {% if cat.category_name ==
           recipe.category_name %}
-          <option value="{{cat.category_name}}" selected
-            >{{cat.category_name}}</option
-          >
+           <option value="{{cat.category_name}}" selected>{{cat.category_name}}</option>
           {% else %}
           <option value="{{cat.category_name}}">{{cat.category_name}}</option>
           {% endif %} {% endfor %}
         </select>
-        
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col-md-6">
-        <label for="icon_prefix">Recipe Name :</label>
+        </div>
+ 
+
+     <div class="form-group col-md-6">
+       <label for="icon_prefix">Recipe Name :</label>
         <input
           id="task_name"
           name="recipe_name"
           type="text"
           class="validate form-control"
-          value="{{recipe.recipe_name}}"
-        />
-        
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col-md-6">
-        <label for="icon_prefix">Cooking time :</label>
+          value="{{recipe.recipe_name}}"/>
+         </div>
+      
+ 
+
+     <div class="form-group col-md-6">
+      <label for="icon_prefix">Cooking time :</label>
         <input
           id="recipe_time"
           name="recipe_time"
@@ -50,69 +41,51 @@
           class="validate form-control"
           value="{{recipe.recipe_time}}"
           placeholder="10 mins"/>
-        
-      </div>
-    </div>
-      <div class="row">
+     </div>
+ 
+
+   
       <div class="form-group col-md-6">
-      <label for="inputAddress">Serves 4 or less ?</label>
+         <label for="inputAddress">Serves 4 or less ?</label>
       
          <select name="recipe_serv"  type="text"
           id="recipe_serv" class="form-control" placeholder="Add number">
-        
-        <option>2</option>
-         <option>4</option>
-          <option>6</option>
+           <option>2</option>
+           <option>4</option>
+           <option>6</option>
       </select>
     </div>
-    </div>
+ 
 
-   <div class="row">
-      <div class="input-field col-md-6">
+ <div class="form-group col-md-6">
       <label for="icon_telephone">Recipe Ingredients :</label>
         <textarea
           name="recipe_ingrediens"
           id="recipe_ingrediens"
           class="form-control">
-{{recipe.recipe_ingrediens}}</textarea>
+        {{recipe.recipe_ingrediens}}</textarea>
         
       </div>
-     </div>
 
+ 
 
-    <div class="row">
-      <div class="input-field col-md-6">
-      <label for="icon_telephone">Method :</label>
-        <textarea
-          name="recipe_met"
-          id="recipe_met"
-          class="form-control"
-        >
-{{recipe.recipe_met}}</textarea
-        >
-        
-      </div>
+ <div class="form-group col-md-6">
+       <label for="icon_telephone">Method :</label>
+
+        <textarea name="recipe_met" id="recipe_met" class="form-control">{{recipe.recipe_met}}</textarea>
     </div>
-   
+    
 
-      <div class="row">
-      <div class="input-field col-md-6">
+<div class="form-group col-md-6">
         <label for="icon_prefix">Picture Url</label>
-        <input
-          id="recipe_url"
-          name="recipe_url"
-          type="text"
-          class="validate form-control"
-          value="{{recipe.recipe_url}}"
-          placeholder="Add picture URL here"/>
-        
-      </div>
-    </div>
+        <input id="recipe_url" name="recipe_url" type="text" class="validate form-control" value="{{recipe.recipe_url}}" placeholder="Add picture URL here"/>
+
+</div>
 
 
 
-     <div class="row">
-    <div class="form-group col-md-6">
+  
+<div class="form-group col-md-6">
       <label for="inputState">Difficulty :</label>
       <select name="recipe_diff" id="recipe_diff" class="form-control">
         <option selected>Easy</option>
@@ -120,9 +93,9 @@
         <option>Medium</option>
         <option>Hard</option>
       </select>
-    </div></div>
+ </div>
 
- <div class="row">
+
     <div class="form-group col-md-6">
       <label for="inputState">Rate :</label>
       <select name="recipe_rate" id="recipe_rate" class="form-control">
@@ -133,8 +106,8 @@
         <option>4</option>
         <option>5</option>
       </select>
-    </div></div>
-    
+    </div>
+     </div>
       <button class="btn btn-primary" type="submit" name="action">
         Save Recipe
        
@@ -144,8 +117,10 @@
     <a href="{{ url_for('get_recipes') }}" class="btn btn-primary m-2">
 				Cancel
 			</a>
-  </form>
+     </form>
 </div>
+  
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
