@@ -114,7 +114,8 @@
       </button>
      
     
-    <a href="{{ url_for('get_recipes') }}" class="btn btn-primary m-2">
+     <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}"
+                class="btn btn-primary">
 				Cancel
 			</a>
      </form>

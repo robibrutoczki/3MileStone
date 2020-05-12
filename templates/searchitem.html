@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container mb-1">
+<div class="row">
+<div class="jumbotron jumbotron-fluid col-12 text-center">
+
+<div class="btn-group btn-group-justified mb-2">
+  <a href="{{url_for('get_shop')}}" class="btn btn-primary">All</a>
+  <a  href="{{ url_for('search_by_cat', category_name='Pan')}}" class=" btn  btn-primaryt w-100 ">Pan</a>
+    <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}" class=" btn  btn-primaryt w-100 ">Cooker</a>
+   <a  href="{{ url_for('search_by_cat', category_name='Hob')}}" class=" btn  btn-primaryt w-100 ">Hobs</a>
+</div>
+            {% if results_total < 2 %}
+                <h3 class="results-text">{{results_total}} Item(s) found :</h3>
+            {% else %}
+                <h3 class="results-text">{{results_total}} Item(s) found :</h3>
+            {% endif %}
+
+
+<div class="card-columns">
+    {% for cate in cat %}
+
+        <div class="card rounded">
+            <a>
+        
+             <img class="card-img-top" src="{{ cate.item_img }}" alt="Card image cap">
+           </a>
+     
+     <div class="card-body">
+    <h5 class="card-title">{{cate.item_name}}</h5>
+    <p class="card-text">Product price: £{{cate.item_price}}</p>
+ 
+   <a
+                href="{{ url_for('show_item', item_id=cate._id) }}"
+                class="btn btn-primary"
+                >Show Product</a>
+    </div>
+  </div>
+{% endfor %}
+        </div></div>
+      </div>
+    </div>
+  
+  {% endblock %}

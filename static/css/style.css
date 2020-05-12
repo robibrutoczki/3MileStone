@@ -9,10 +9,6 @@ body {
   -o-background-size: cover;
 }
 
-.nav {
-  height: 80px;
-  font-size: 5rem;
-}
 
 .container {
   background-color: #f2e3d3;
@@ -95,4 +91,11 @@ h1 {
 
 #up {
   opacity: 0.5;
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */}
+
+.zoom:hover {
+  transform: scale(1.4); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }

@@ -163,8 +163,7 @@ class="navbar-toggler"
 </ul>
    <ul class="navbar-nav m-2">
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('get_shop')}}"
-                >Shop </a>
+              <a class="nav-link" href="{{url_for('get_shop')}}" >Shop </a>
             </li>
           </ul>
               <ul class="navbar-nav m-2">
@@ -250,21 +249,20 @@ class="navbar-toggler"
 <footer class="page-footer font-small mt-1">
 
   <!-- Footer Elements -->
-  <div class="container col-12 text-center">
-<h1 class="display-4" href="{{url_for('get_shop')}}">Visit our shop !</h1>
+  <div class="container col-12 d-none d-lg-block text-center">
+<h1 class="display-4">Visit our shop !</h1>
     <!--Grid row-->
-    <div class="row">
+    <div class="row no-gutters">
 
       <!--Grid column-->
-      <div class="col-lg-1 col-md-6 mb-4">
+      <div class="col-lg-1 col-md-none  mb-4">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/1327995_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image1-->
+        <div class="view overlay m-0 zoom ">
+      <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
+          <img src="https://media.4rgos.it/i/Argos/4374770_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
+         
         </div>
 
       </div>
@@ -273,13 +271,11 @@ class="navbar-toggler"
       <!--Grid column-->
       <div class="col-lg-1 col-md-6 mb-4">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/7155305_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image2-->
+        <div class="view overlay z-depth-1-half zoom">
+         <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
+          <img src="https://media.4rgos.it/i/Argos/5550067_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
         </div>
 
       </div>
@@ -288,13 +284,11 @@ class="navbar-toggler"
       <!--Grid column-->
       <div class="col-lg-1 col-md-6 mb-4">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/4257756_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image3-->
+        <div class="view overlay z-depth-1-half zoom">
+         <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
+          <img src="https://media.4rgos.it/i/Argos/8803357_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
         </div>
 
       </div>
@@ -303,13 +297,24 @@ class="navbar-toggler"
       <!--Grid column-->
       <div class="col-lg-1 col-md-12 mb-4">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/6068534_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image4-->
+        <div class="view overlay z-depth-1-half zoom">
+        <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
+          <img src="https://media.4rgos.it/i/Argos/6207027_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
+          </div>
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-1 col-md-6 mb-4">
+
+        <!--Image5-->
+        <div class="view overlay z-depth-1-half zoom">
+       <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
+          <img src="https://media.4rgos.it/i/Argos/6312596_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
         </div>
 
       </div>
@@ -318,101 +323,72 @@ class="navbar-toggler"
       <!--Grid column-->
       <div class="col-lg-1 col-md-6 mb-4">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/9201659_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
-        </div>
-
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-1 col-md-6 mb-4">
-
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/8906175_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image6-->
+        <div class="view overlay z-depth-1-half zoom">
+        <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
+          <img src="https://media.4rgos.it/i/Argos/8814030_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
         </div>
 
       </div>
       <div class="col-lg-1 col-md-6 mb-4">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/1327995_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
-        </div>
+        <!--Image7-->
+        <div class="view overlay z-depth-1-half zoom">
+         <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
+          <img src="https://media.4rgos.it/i/Argos/8726283_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
+         </div>
       </div>
       <!--Grid column-->
 
       <div class="col-lg-1 col-md-6 mb-2">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/1327995_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}"> 
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image8-->
+        <div class="view overlay z-depth-1-half zoom">
+          <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
+          <img src="https://media.4rgos.it/i/Argos/8939393_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
         </div>
 
     </div>
   
       <div class="col-lg-1 col-md-6 mb-2">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/1327995_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image9-->
+        <div class="view overlay z-depth-1-half zoom">
+       <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
+          <img src="https://media.4rgos.it/i/Argos/9147782_R_Z001A_UC1404492?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
         </div>
       </div>
 
       <div class="col-lg-1 col-md-6 mb-2">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/1327995_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image"  href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
-        </div>
+        <!--Image10-->
+        <div class="view overlay z-depth-1-half zoom">
+         <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
+          <img src="https://media.4rgos.it/i/Argos/6876245_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
+         </div>
     </div>
 
   <div class="col-lg-1 col-md-6 mb-2">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/1327995_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image11-->
+        <div class="view overlay z-depth-1-half zoom">
+          <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
+          <img src="https://media.4rgos.it/i/Argos/6984285_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
         </div>
   </div>
    <div class="col-lg-1 col-md-6 mb-2">
 
-        <!--Image-->
-        <div class="view overlay z-depth-1-half">
-          <img src="https://media.4rgos.it/i/Argos/1327995_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item" href="{{url_for('get_shop')}}">
-          <a href="{{url_for('get_shop')}}">
-            <div class="mask rgba-white-light"></div>
-          </a>
+        <!--Image12-->
+        <div class="view overlay z-depth-1-half zoom">
+       <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
+          <img src="https://media.4rgos.it/i/Argos/8193672_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
+            alt="item-image" ></a>
         </div>
   </div>
     </div></div>

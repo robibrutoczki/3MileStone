@@ -132,7 +132,7 @@ def search_by_diff(recipe_diff):
     recipe_by_difficulty = mongo.db.recipes.find(
         db_query).sort([("recipe_name", -1)])
     results_total = mongo.db.recipes.count(db_query)
-    return render_template("searchdiff.html",
+    return render_template("search.html",
                            recipes=recipe_by_difficulty,
                            results_total=results_total)
 
@@ -143,7 +143,7 @@ def search_by_rate(recipe_rate):
     recipe_by_rate = mongo.db.recipes.find(
         db_query).sort([("recipe_name", -1)])
     results_total = mongo.db.recipes.count(db_query)
-    return render_template("searchrate.html",
+    return render_template("search.html",
                            recipes=recipe_by_rate,
                            results_total=results_total)
 
@@ -154,8 +154,18 @@ def search_by_serv(recipe_serv):
     recipe_by_serv = mongo.db.recipes.find(
         db_query)
     results_total = mongo.db.recipes.count(db_query)
-    return render_template("searchrate.html",
+    return render_template("search.html",
                            recipes=recipe_by_serv,
+                           results_total=results_total)
+
+
+@app.route('/find_item_cat/<category_name>', methods=['GET', 'POST'])
+def search_by_cat(category_name):
+    db_query = {'category_name': category_name}
+    item_by_cat = mongo.db.shop.find(db_query)
+    results_total = mongo.db.shop.count(db_query)
+    return render_template("searchitem.html",
+                           cat=item_by_cat,
                            results_total=results_total)
 
 
@@ -172,7 +182,7 @@ def show_item(item_id):
     """
     item_id = mongo.db.shop.find_one({"_id": ObjectId(item_id)})
     return render_template("showItem.html", item=item_id)
-
+    
 
 @app.route('/see charts')
 def see_charts():
