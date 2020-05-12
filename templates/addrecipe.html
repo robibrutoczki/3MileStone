@@ -1,0 +1,103 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="jumbotron col-8 col-md-12">
+  <form action="{{ url_for('insert_recipe') }}" method="POST" >  
+    <h3>Add Recipe</h3>   
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="inputState">Recipe Category</label>
+          <select id="category" name="category_name" class="form-control">
+            <option value="" disabled selected>Choose Category</option>
+          {% for cat in categories %}
+          <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+  
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Recipe Name</label>
+      <input
+        type="text"
+        class="form-control validate"
+        id="recipe_name" name="recipe_name" 
+        placeholder="Recipe" required />
+    </div>
+
+ <div class="form-group col-md-6">
+      <label for="inputAddress">Cooking time</label>
+      <input
+        type="number"
+        class="form-control"
+        id="recipe_time" name="recipe_time" 
+        placeholder="Cooking time"/>
+    </div>
+
+<div class="form-group col-md-6">
+      <label for="inputAddress">Serves 4 or less ?</label>
+      
+         <select name="recipe_serv"  type="text"
+          id="recipe_serv" class="form-control validate" required>
+        <option disabled>Add number </option>
+        <option>2</option>
+         <option>4</option>
+          <option>6</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+<label for="inputState">Difficulty</label>
+      <select name="recipe_diff"
+          id="recipe_diff" class="form-control validate" required>
+        <option selected>Choose...</option>
+        <option>Easy</option>
+         <option>Medium</option>
+          <option>Hard</option>
+      </select>
+      </div> 
+      
+<div class="form-group col-md-6">
+      <label for="inputAddress">Picture url</label>
+      <input
+        type="text"
+        class="form-control"
+        id="recipe_url" name="recipe_url" 
+        placeholder="Add picture url here"/>
+    </div>
+
+<div class="form-group col-md-12">
+        <label for="inputZip">Ingredients</label>
+        <textarea type="textarea" class="form-control"  name="recipe_ingrediens"
+          id="recipe_ingrediens" ></textarea>
+      </div>
+
+      <div class="form-group col-md-12">
+        <label for="inputZip">Method</label>
+        <textarea type="textarea" class="form-control validate" required  name="recipe_met"
+          id="recipe_met" ></textarea>
+      </div>
+    </div>
+
+      
+    <div class="form-group col-md-6">
+      <label for="inputState">Rate :</label>
+      <select name="recipe_rate" id="recipe_rate" class="form-control">
+        <option selected>5</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+   
+
+    <button type="submit" name="action" class="btn btn-primary"> <i class="fas fa-plus"></i>Add Recipe</button>
+	
+    	<a href="{{ url_for('get_recipes') }}" class="btn btn-primary m-2">
+				Cancel
+			</a>
+ 
+  </form>
+</div>
+{% endblock %}

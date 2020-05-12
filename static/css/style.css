@@ -1,0 +1,106 @@
+body {
+  width: 100%;
+  background: url("https://images.pexels.com/photos/1437655/pexels-photo-1437655.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+    no-repeat center center fixed;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+
+.container {
+  background-color: #f2e3d3;
+  color: #212323;
+}
+
+.jumbotron {
+  background-color: #f2e3d3;
+}
+
+.card-body {
+  background-color: #f8f8f6;
+  color: #212323;
+}
+
+.btn {
+  background-color: #f2e3d3;
+  color: #212323;
+  border: 2px solid #a1a8a8;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #e2dcc3;
+  color: #212323;
+  border: 2px solid #a1a8a8;
+}
+
+.btn-outline-light {
+  border: none;
+  background-color: #f2e3d3;
+  color: #212323;
+}
+
+.btn-outline-light:hover {
+  border: none;
+  background-color: #f2e3d3;
+  color: #212323;
+}
+
+.dropdown-item:active {
+  
+  color: #212323;
+  border: 2px solid #a1a8a8;
+}
+
+.dropdown-item,
+.dropdown-menu {
+ 
+  color: #212323;
+}
+
+.task_header {
+  margin-top: 15px;
+}
+
+
+img,
+h1 {
+  cursor: pointer;
+  border-radius: 15px solid #212222;
+}
+
+#welcome {
+  height: 70vh;
+
+  background: url("https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    no-repeat fixed;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: #fff;
+}
+
+.page-footer {
+  height: 10%;
+}
+
+#up {
+  opacity: 0.5;
+}
+
+/* Netflix zoom */
+.zoom {
+  transition: transform .2s; /* Animation */}
+
+.zoom:hover {
+  transform: scale(1.4); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.shadow{
+  text-shadow: 2px 2px green;
+}
