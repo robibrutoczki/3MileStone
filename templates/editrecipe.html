@@ -108,10 +108,9 @@
       </select>
     </div>
      </div>
-      <button class="btn btn-primary" type="submit" name="action">
+      <button class="btn btn-primary" type="submit" name="action" href="{{ url_for('show_recipe', recipe_id=recipe._id) }}" >
         Save Recipe
-       
-      </button>
+       </button>
      
     
      <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}"

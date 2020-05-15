@@ -126,9 +126,20 @@
                 >Manage categories</a
               >
             </li>
-           
-    
-   <li class="nav-item dropdown">
+</ul>
+   <ul class="navbar-nav m-2">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('get_shop')}}" >Shop </a>
+            </li>
+          </ul>
+    <ul class="navbar-nav m-2">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('see_charts')}}">Charts</a>
+            </li>
+          </ul>
+        
+              <ul class="navbar-nav ml-10">
+              <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -139,42 +150,30 @@
                 aria-expanded="false">Sign in</a>
               <div class="dropdown-menu">
   <form class="px-4 py-3">
+  <div class="alert alert-primary" role="alert">
+ <h5 class="modal-title" id="exampleModalLongTitle"> We're hard at working improving the app,including features like sign in/register-but not quite there yet. Check back soon!</h5>
+   </div>
     <div class="form-group">
-      <label for="exampleDropdownFormEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+      <label for="exampleDropdownFormEmail1">Username</label>
+       <input type="text" class="form-control" name="username" placeholder="Username" required>
     </div>
     <div class="form-group">
       <label for="exampleDropdownFormPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+      <input type="password" class="form-control" name="pass" placeholder="Password" required>
     </div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="dropdownCheck">
-      <label class="form-check-label" for="dropdownCheck">
-        Remember me
-      </label>
     </div>
     <button type="submit" class="btn btn-primary">Sign in</button>
   </form>
   <div class="dropdown-divider"></div>
-  <a class="dropdown-item" href="#">New around here? Sign up</a>
-  <a class="dropdown-item" href="#">Forgot password?</a>
+  <a class="dropdown-item"  href="#"> New around here? Sign up</a>
+  
 </div>
 </li>
-</ul>
-   <ul class="navbar-nav m-2">
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('get_shop')}}" >Shop </a>
-            </li>
           </ul>
-              <ul class="navbar-nav m-2">
+            <ul class="navbar-nav m-2">
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('see_charts')}}">Charts</a>
-            </li>
-          </ul>
-         
-              <ul class="navbar-nav ml-10">
-            <li class="nav-item">
-          
+              <a class="nav-link" href="#" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-shopping-cart"></i> Trolley</a>
 
             </li>
           </ul>
@@ -182,7 +181,29 @@
       </nav>
     </div>
   <!--END of NAVBAR -->
-
+<!--Mopdal for Trolley -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">What's in my trolley ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="alert alert-primary" role="alert">
+        We're hard at working improving the app,including features like in-app shopping-but not quite there yet. Check back soon!
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!--  Hidden Modal for small screen -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered " role="input">
@@ -432,68 +453,33 @@
   <div class="fixed-bottom">
  <a type="action" href="#navbar" id="up" class="btn btn-primary float-right m-2"><i class="fas fa-angle-up"></i></a>
  </div>
+
+
 <!-- Footer -->
 
-<div class="container col-lg-8 col-sm-12 mt-1">
-  <div class="row">
-      <div class="col-12">
-        <div class="jumbotron text-center">
 
-<footer class="page-footer font-small">
+ <!-- Links -->
+ <div class="container col-lg-8 col-sm-12 mt-1">     
+<div class="jumbotron p-1">
 
-  <!-- Footer Links -->
-  <div class="container-fluid text-center text-md-left">
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-6 mt-md-0 ">
-
-        <!-- Content -->
-        
-        <h5 class="text-uppercase">My KitcheN</h5>
-        
-       <img class="d-block w-10 float-left" src="{{url_for('static', filename='img/MyKitcheN50.png')}}" alt="Logo"/> <p class=" lead float"> This website is published by<strong> RobbieB</strong>.</p>
-
-      </div>
-      <!-- Grid column -->
-
+<footer class="footer" id="sticky-footer">
+   
+   <div class="card text-center">
   
-
-
-      <!-- Grid column -->
-      <div class="col-md-3 mb-md-0 text-center">
-
-        <!-- Links -->
-        <h5 class="text-uppercase">Contact :</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="http://robbieb.co.uk/#contact" class="btn w-100" target="_blank"><i class=" fab fa-internet-explorer"></i>  Website</a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/RobbieBWD/" class=" btn w-100" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-          </li>
-          <li>
-            <a href="https://github.com/robibrutoczki" class=" btn w-100" target="_blank"><i class=" fab fa-github"></i> GitHub</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/robi-brutoczki-28243a189/" class="btn w-100" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
-
+ <div class="card-body">
+     <a href="http://robbieb.co.uk/#contact" class="btn w-30 mb-1 float" target="_blank"><i class=" fab fa-internet-explorer"></i>  Website</a>
+    <a href="https://github.com/robibrutoczki" class=" btn w-30 mb-1 float" target="_blank"><i class=" fab fa-github"></i> GitHub</a>
+   <a href="https://www.facebook.com/RobbieBWD/" class=" btn w-30 mb-1 float" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+   <a href="https://www.linkedin.com/in/robi-brutoczki-28243a189/" class="btn w-30 float mb-1" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+ 
   </div>
-  <!-- Footer Links -->
+ <div class="footer-copyright text-center py-3 d-none d-lg-block">© 2020 Copyright:
+    <a href="http://robbieb.co.uk/#contact">RobbieB</a>
+  </div>
+</div>
+ 
+</footer></div></div>
 
-
-</footer></div></div></div></div>
 <!-- Footer -->
 
 

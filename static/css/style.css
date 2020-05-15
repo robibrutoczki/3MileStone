@@ -85,9 +85,6 @@ h1 {
   color: #fff;
 }
 
-.page-footer {
-  height: 10%;
-}
 
 #up {
   opacity: 0.5;
@@ -103,4 +100,8 @@ h1 {
 
 .shadow{
   text-shadow: 2px 2px green;
+}
+
+#sticky-footer {
+  flex-shrink: none;
 }
