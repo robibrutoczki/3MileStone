@@ -1,11 +1,10 @@
 import os
-import bcrypt
+
 from os import path
-from datetime import datetime
 from bson.objectid import ObjectId
 from flask_pymongo import PyMongo
 
-from flask import Flask, flash, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for, session
 
 
 if path.exists("env.py"):
