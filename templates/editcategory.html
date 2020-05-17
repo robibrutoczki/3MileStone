@@ -4,25 +4,15 @@
 <div class="jumbotron mt-1">
   <div class="row ">
     <h3 class="ml-4 mb-2">Edit Categories</h3>
-  
-
-	<form action="{{ url_for('update_category', category_id=category._id) }}" method="POST" class="col-12">
-	
-			<div class="input-field col-md-6 mb-2">
+        <form action="{{ url_for('update_category', category_id=category._id) }}" method="POST" class="col-12">
+	        <div class="input-field col-md-6 mb-2">
 				<label for="category_name">Category Name</label>
-				<input id="category_name" name="category_name" type="text" class="validate form-control" value="{{category.category_name}}" >
-				
+				<input id="category_name" name="category_name" type="text" class="validate form-control" value="{{category.category_name}}">
 			</div>
-	
-		
-			<button class="btn btn-primary ml-3" type="submit" name="action">Save Changes
-               
-             </button>
-			<a href="{{ url_for('get_categories') }}" class="btn btn-primary m-2">
-				Cancel
-			</a>
-	
-	</form>
-</div></div>
+	        <button class="btn btn-primary ml-3" type="submit" name="action">Save Changes</button>
+	        <a href="{{ url_for('get_categories') }}" class="btn btn-primary m-2">Cancel</a>
+	    </form>
+    </div>
+</div>
 
 {% endblock %}

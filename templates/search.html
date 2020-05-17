@@ -9,22 +9,22 @@
             {% else %}
                 <h3 class="results-text display-3 mb-2">{{results_total}} recipes found</h3>
             {% endif %}
-  
-    
     <div class="card-columns">
-        {% for recipe in recipes %}
-       <div class="card text-center">
-          <img class="card-img-top" src="{{ recipe.recipe_url }}" alt="Card image cap">
+            {% for recipe in recipes %}
+        <div class="card text-center">
+            <a href="{{ url_for('show_recipe', recipe_id=recipe._id)}}">
+            <img src="{{recipe.recipe_url}}" class="card-img-top" alt="Nice pic should be here"/></a>
+         
         <div class="card-body">
-             <h5 class="card-title">{{ recipe.recipe_name }}</h5>
-        <p class="card-text">{{ recipe.recipe_diff}}</p>
+            <h5 class="card-title">{{ recipe.recipe_name }}</h5>
+            <p class="card-text">{{ recipe.recipe_diff}}</p>
 
-    <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Show recipe</a>
-  </div>
+            <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Show recipe</a>
+        </div>
+    </div>
+            {% endfor %}
 </div>
- {% endfor %}
 </div>
-</div>
- </div></div>
+</div></div>
 
 {% endblock %}

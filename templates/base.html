@@ -3,30 +3,21 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
     <!--Favicon-->
-<link rel="icon" 
-      type="image/png" 
-     href="{{url_for('static', filename='img/MyKitcheN.png')}}">
+
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='img/Logo50.png')}}">
+
     <!-- Bootstrap CSS -->
  
-  
-
-<link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous" />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}"
-      type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
   
     <title>MyKitcheN</title>
+    
     <script src="https://kit.fontawesome.com/97e327c4f9.js" crossorigin="anonymous"></script>
+
   </head>
 
   
@@ -36,153 +27,206 @@
     <div class="container-fluid col-sm-12 p-0">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand mx-auto" id="navbar"  href="{{url_for('get_recipes')}}">
-        <img class="d-block w-100" src="{{url_for('static', filename='img/MyKitcheN100.png')}}" alt="Logo"/></a>
-        <button class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+        <img class="d-block w-100" src="{{url_for('static', filename='img/Logo50.png')}}" alt="Logo"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-center"
-          id="navbarSupportedContent">
-          <ul class="navbar-nav m-2">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav m-2">
             <li class="nav-item active">
               <a class="nav-link" href="{{url_for('get_recipes')}}"
                 >Home <span class="sr-only">(current)</span></a>
             </li>
-          </ul>
-              <ul class="navbar-nav m-2">
-             <li class="nav-item">
+        </ul>
+
+        <ul class="navbar-nav m-2">
+            <li class="nav-item">
               <a class="nav-link" href="{{url_for('get_index')}}">All recipes</a>
             </li>
-          </ul>
+        </ul>
 
 <!--Search Dropdown -->
-<ul id="menu" class="navbar-nav m-2 d-none d-lg-block"> 
-  <li class="nav-item text-center">
- 
-  <li><a class="btn btn-outline-light dropdown-toggle " >Search Recipes</a>
-    <ul class="dropdown-menu text-center">
-      <li><div  class="dropdown-item">Serves</div>
-      <div class="dropdown-divider"></div>
+
+        <ul id="menu" class="navbar-nav m-2 d-none d-lg-block"> 
+            <li class="nav-item text-center"><li>
+                <a class="btn btn-outline-light dropdown-toggle " >Search Recipes</a>
+
         <ul class="dropdown-menu text-center">
-          <li  class="dropdown-item" ><a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_serv', recipe_serv='2') }}">2</a></li>
+            <li>
+            <div  class="dropdown-item">Category</div>
+               <div class="dropdown-divider"></div>
+
+        <ul class="dropdown-menu text-center">
+
+            <li  class="dropdown-item" >
+                <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_reccat', category_name='Main') }}">Main</a>
+            </li>
           <div class="dropdown-divider"></div>
-          <li  class="dropdown-item" ><a class="btn btn-outline-light w-100" href="{{ url_for('search_by_serv', recipe_serv='4') }}">4</a></li>
+
+            <li  class="dropdown-item" >
+            <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_reccat', category_name='Breakfast') }}">Breakfast</a>
+            </li>
           <div class="dropdown-divider"></div>
-            <li  class="dropdown-item"><a class="btn btn-outline-light w-100" href="{{ url_for('search_by_serv', recipe_serv='6') }}">6</a></li>
+          <li  class="dropdown-item" >
+          <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_reccat', category_name='Starter') }}">Starter</a>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li  class="dropdown-item" >
+          <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_reccat', category_name='Vegan') }}">Vegan</a>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li  class="dropdown-item" >
+          <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_reccat', category_name='Chinese') }}">Chinese</a>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li  class="dropdown-item" >
+          <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_reccat', category_name='Italian') }}">Italian</a>
+          </li>
+          <div class="dropdown-divider"></div>
+           <li  class="dropdown-item" >
+           <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_reccat', category_name='Indian') }}">Indian</a>
+           </li>
+          <div class="dropdown-divider"></div>
+          <li  class="dropdown-item" >
+          <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_reccat', category_name='Dessert') }}">Dessert</a>
+          </li>
+          <div class="dropdown-divider"></div>
+         </ul>
+      </li>
+
+      <li><div  class="dropdown-item">Serves</div>
+          <div class="dropdown-divider"></div>
+        <ul class="dropdown-menu text-center">
+          <li  class="dropdown-item" >
+          <a  class="btn btn-outline-light w-100" href="{{ url_for('search_by_serv', recipe_serv='2') }}">2</a>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li  class="dropdown-item" >
+          <a class="btn btn-outline-light w-100" href="{{ url_for('search_by_serv', recipe_serv='4') }}">4</a>
+          </li>
+          <div class="dropdown-divider"></div>
+            <li  class="dropdown-item">
+            <a class="btn btn-outline-light w-100" href="{{ url_for('search_by_serv', recipe_serv='6') }}">6</a>
+            </li>
         </ul>
       </li>
       <li><div  class="dropdown-item">Difficulty</div>
       <div class="dropdown-divider"></div>
         <ul class="dropdown-menu text-center">
-          <li class="dropdown-item"><a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_diff', recipe_diff='Easy') }}">Easy</a></li>
+          <li class="dropdown-item">
+          <a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_diff', recipe_diff='Easy') }}">Easy</a>
+          </li>
           <div class="dropdown-divider"></div>
-          <li class="dropdown-item"><a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_diff', recipe_diff='Medium') }}">Medium</a></li>
+          <li class="dropdown-item">
+          <a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_diff', recipe_diff='Medium') }}">Medium</a>
+          </li>
           <div class="dropdown-divider"></div>
-          <li class="dropdown-item"><a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_diff', recipe_diff='Hard') }}">Hard</a></li>
+          <li class="dropdown-item">
+          <a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_diff', recipe_diff='Hard') }}">Hard</a>
+          </li>
         </ul>
       </li>
+
       <li ><div class="dropdown-item">Rate</div>
         <ul class="dropdown-menu text-center">
-         <li class="dropdown-item"><a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='1') }}">Rating: 1</a></li>
-         <div class="dropdown-divider"></div>
-       <li class="dropdown-item"><a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='2') }}">Rating: 2</a></li>
-       <div class="dropdown-divider"></div>
-        <li class="dropdown-item"><a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='3') }}">Rating: 3</a></li>
-        <div class="dropdown-divider"></div>
-          <li class="dropdown-item"><a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='4') }}">Rating: 4</a></li>
-          <div class="dropdown-divider"></div> 
-       <li class="dropdown-item"><a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='5') }}">Rating: 5</a></li>
+        <li class="dropdown-item">
+            <a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='1') }}">Rating: 1</a>
+        </li>
+    <div class="dropdown-divider"></div>
+        <li class="dropdown-item">
+            <a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='2') }}">Rating: 2</a>
+        </li>
+    <div class="dropdown-divider"></div>
+        <li class="dropdown-item">
+            <a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='3') }}">Rating: 3</a>
+        </li>
+    <div class="dropdown-divider"></div>
+        <li class="dropdown-item">
+            <a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='4') }}">Rating: 4</a>
+        </li>
+    <div class="dropdown-divider"></div> 
+        <li class="dropdown-item">
+            <a class=" btn btn-outline-light w-100 " href="{{ url_for('search_by_rate', recipe_rate='5') }}">Rating: 5</a>
+        </li>
         </ul>
       </li>
     </ul>
   </li>
-      </li>
+</li>
 </ul>
 
 <!--End of Search-->
        
-           <ul class="navbar-nav m-2 d-lg-none">
-            <li class="nav-item">
+    <ul class="navbar-nav m-2 d-lg-none">
+        <li class="nav-item">
         <!-- Button trigger modal -->
            <a type="button" class="" data-toggle="modal" data-target="#exampleModalCenter">Search Recipes</a>
-      </li>
-          </ul>
+        </li>
+    </ul>
 
-             <ul class="navbar-nav m-2">
-             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('add_recipe')}}"
-                >Add recipe</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('get_categories')}}"
-                >Manage categories</a
-              >
-            </li>
-</ul>
-   <ul class="navbar-nav m-2">
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('get_shop')}}" >Shop </a>
-            </li>
-          </ul>
     <ul class="navbar-nav m-2">
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('see_charts')}}">Charts</a>
-            </li>
-          </ul>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('add_recipe')}}">Add recipe</a>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav m-2">
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('get_shop')}}" >Shop </a>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav m-2">
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('see_charts')}}">Charts</a>
+        </li>
+    </ul>
         
-              <ul class="navbar-nav ml-10">
-              <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">Sign in</a>
-              <div class="dropdown-menu">
-  <form class="px-4 py-3">
-  <div class="alert alert-primary" role="alert">
- <h5 class="modal-title" id="exampleModalLongTitle"> We're hard at working improving the app,including features like sign in/register-but not quite there yet. Check back soon!</h5>
-   </div>
-    <div class="form-group">
-      <label for="exampleDropdownFormEmail1">Username</label>
+    <ul class="navbar-nav ml-10">
+        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Sign in</a>
+
+<div class="dropdown-menu">
+    <form class="px-4 py-3">
+        <div class="alert alert-primary" role="alert">
+            <h5 class="modal-title" id="exampleModalLongTitle"> We're hard at working improving the app,including features like sign in/register-but not quite there yet. Check back soon!</h5>
+</div>
+
+<div class="form-group">
+    <label for="exampleDropdownFormEmail1">Username</label>
        <input type="text" class="form-control" name="username" placeholder="Username" required>
-    </div>
-    <div class="form-group">
-      <label for="exampleDropdownFormPassword1">Password</label>
-      <input type="password" class="form-control" name="pass" placeholder="Password" required>
-    </div>
-    <div class="form-check">
-    </div>
+</div>
+
+<div class="form-group">
+    <label for="exampleDropdownFormPassword1">Password</label>
+    <input type="password" class="form-control" name="pass" placeholder="Password" required>
+</div>
+
+<div class="form-check">
+
     <button type="submit" class="btn btn-primary">Sign in</button>
-  </form>
-  <div class="dropdown-divider"></div>
-  <a class="dropdown-item"  href="#"> New around here? Sign up</a>
-  
+</div>
+</form>
+<div class="dropdown-divider"></div>
+    <a class="dropdown-item"  href="#"> New around here? Sign up</a>
 </div>
 </li>
-          </ul>
-            <ul class="navbar-nav m-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-shopping-cart"></i> Trolley</a>
-
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+</ul>
+    <ul class="navbar-nav m-2">
+        <li class="nav-item">
+            <a class="nav-link" href="#" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-shopping-cart"></i> Trolley</a>
+        </li>
+    </ul>
+</div>
+</nav>
+</div>
   <!--END of NAVBAR -->
+
 <!--Mopdal for Trolley -->
-<!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -191,76 +235,83 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-      <div class="alert alert-primary" role="alert">
+      </div> 
+
+<div class="modal-body">
+    <div class="alert alert-primary" role="alert">
         We're hard at working improving the app,including features like in-app shopping-but not quite there yet. Check back soon!
-      </div>
-      </div>
-      <div class="modal-footer">
+    </div>
+</div>
+<div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+</div>
     </div>
   </div>
 </div>
+
 <!--  Hidden Modal for small screen -->
+
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered " role="input">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Search by :</h5>
+        <h5 class="modal-title" id="exampleModalLongT">Search by :</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+<div class="modal-body  text-center">
+    <div class="dropdown show">
+       <a class="btn dropdown-toggle w-100 mb-2" href="#" role="button" id="dropdownMenuCat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipe by Category</a>
+    <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuServ">
+ 
+        <li><a  class="btn btn-primary w-100" href="{{ url_for('search_by_reccat', category_name='Main') }}">Main</a></li>
+        <li><a  class="btn btn-primary w-100" href="{{ url_for('search_by_reccat', category_name='Breakfast') }}">Breakfast</a></li>
+        <li><a  class="btn btn-primary w-100" href="{{ url_for('search_by_reccat', category_name='Starter') }}">Starter</a></li>
+        <li><a  class="btn btn-primary w-100" href="{{ url_for('search_by_reccat', category_name='Vegan') }}">Vegan</a></li>
+        <li ><a  class="btn btn-primary w-100" href="{{ url_for('search_by_reccat', category_name='Chinese') }}">Chinese</a></li>
+        <li ><a  class="btn btn-primary w-100" href="{{ url_for('search_by_reccat', category_name='Italian') }}">Italian</a></li>
+        <li><a  class="btn btn-primary w-100" href="{{ url_for('search_by_reccat', category_name='Indian') }}">Indian</a></li>
+        <li><a  class="btn btn-primary w-100" href="{{ url_for('search_by_reccat', category_name='Dessert') }}">Dessert</a></li>
+  </div>
+</div>
+<div class="dropdown show">
+  <a class="btn dropdown-toggle w-100 mb-2" href="#" role="button" id="dropdownMenuServ" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipe by Serving</a>
 
-    <div class="modal-body  text-center">
-     <div class="dropdown show">
-  <a class="btn dropdown-toggle w-100 mb-2" href="#" role="button" id="dropdownMenuServ" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Recipe by Serving
-  </a>
-
-  <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuServ">
+<div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuServ">
     <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_serv', recipe_serv='2') }}">Serves 2</a></li>
-<li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_serv', recipe_serv='4') }}">Serves 4</a></li>
-   <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_serv', recipe_serv='6') }}">Serves 6</a></li>
+    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_serv', recipe_serv='4') }}">Serves 4</a></li>
+    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_serv', recipe_serv='6') }}">Serves 6</a></li>
   </div>
 </div>
 
 
 <div class="dropdown show">
-  <a class="btn dropdown-toggle w-100 mb-2" href="#" role="button" id="dropdownMenuDiff" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Recipe by Difficulty
-  </a>
-
-  <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuDiff">
-    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_diff', recipe_diff='Easy') }}">Easy</a></li>
-    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_diff', recipe_diff='Medium') }}">Medium</a></li>
-    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_diff', recipe_diff='Hard') }}">Hard</a></li>
-  </div>
+  <a class="btn dropdown-toggle w-100 mb-2" href="#" role="button" id="dropdownMenuDiff" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipe by Difficulty</a>
+    <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuDiff">
+        <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_diff', recipe_diff='Easy') }}">Easy</a></li>
+        <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_diff', recipe_diff='Medium') }}">Medium</a></li>
+        <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_diff', recipe_diff='Hard') }}">Hard</a></li>
+   </div>
 </div>
 
 
 <div class="dropdown show">
-  <a class="btn dropdown-toggle w-100 mb-2" href="#" role="button" id="dropdownMenuTime" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Recipe by Rate :
-  </a>
+    <a class="btn dropdown-toggle w-100 mb-2" href="#" role="button" id="dropdownMenuTime" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Recipe by Rate :</a>
 
-  <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuTime">
-    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='1') }}">Rating: 1</a></li>
-    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='2') }}">Rating: 2</a></li>
-    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='3') }}">Rating: 3</a></li>
-     <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='4') }}">Rating: 4</a></li>
-    <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='5') }}">Rating: 5</a></li>
+    <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuTime">
+        <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='1') }}">Rating: 1</a></li>
+        <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='2') }}">Rating: 2</a></li>
+        <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='3') }}">Rating: 3</a></li>
+        <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='4') }}">Rating: 4</a></li>
+        <li><a class=" btn btn-primary w-100 " href="{{ url_for('search_by_rate', recipe_rate='5') }}">Rating: 5</a></li>
   </div>
 </div>
-
-      </div>
+</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
-      </div>
+        </div>
     </div>
   </div>
 </div>
@@ -270,163 +321,128 @@
 <footer class="page-footer font-small mt-1">
 
   <!-- Footer Elements -->
-  <div class="container col-12 d-none d-lg-block text-center">
-<h1 class="display-4 shadow">Visit our shop !</h1>
+    <div class="container col-12 d-none d-lg-block text-center">
+        <h1 class="display-4 shadow">Visit our shop !</h1>
+
     <!--Grid row-->
     <div class="row no-gutters">
-
-      <!--Grid column-->
-      <div class="col-lg-1 col-md-none  mb-4">
-
-        <!--Image1-->
-        <div class="view overlay m-0 zoom ">
-      <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
-          <img src="https://media.4rgos.it/i/Argos/4374770_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-         
-        </div>
-
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-1 col-md-6 mb-4">
-
-        <!--Image2-->
-        <div class="view overlay z-depth-1-half zoom">
-         <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
-          <img src="https://media.4rgos.it/i/Argos/5550067_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-        </div>
-
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-1 col-md-6 mb-4">
-
-        <!--Image3-->
-        <div class="view overlay z-depth-1-half zoom">
-         <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
-          <img src="https://media.4rgos.it/i/Argos/8803357_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-        </div>
-
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-1 col-md-12 mb-4">
-
-        <!--Image4-->
-        <div class="view overlay z-depth-1-half zoom">
+    <!--Grid column-->
+    <div class="col-lg-1 col-md-none  mb-4">
+    <!--Image1-->
+    <div class="view overlay m-0 zoom ">
         <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
-          <img src="https://media.4rgos.it/i/Argos/6207027_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-          </div>
+        <img src="https://media.4rgos.it/i/Argos/4374770_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
+    </div>
+</div>
+     <!--Grid column-->
+    <div class="col-lg-1 col-md-6 mb-4">
 
-      </div>
-      <!--Grid column-->
+    <!--Image2-->
+    <div class="view overlay z-depth-1-half zoom">
+        <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
+          <img src="https://media.4rgos.it/i/Argos/5550067_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
+    </div>
+</div>
+     <!--Grid column-->
+    <div class="col-lg-1 col-md-6 mb-4">
 
-      <!--Grid column-->
-      <div class="col-lg-1 col-md-6 mb-4">
+    <!--Image3-->
+    <div class="view overlay z-depth-1-half zoom">
+         <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
+          <img src="https://media.4rgos.it/i/Argos/8803357_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
+    </div>
+</div>
+    <!--Grid column-->
+    <div class="col-lg-1 col-md-12 mb-4">
 
+    <!--Image4-->
+    <div class="view overlay z-depth-1-half zoom">
+        <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
+          <img src="https://media.4rgos.it/i/Argos/6207027_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
+        </div>
+    </div>
+    <!--Grid column-->
+    <div class="col-lg-1 col-md-6 mb-4">
         <!--Image5-->
         <div class="view overlay z-depth-1-half zoom">
-       <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
-          <img src="https://media.4rgos.it/i/Argos/6312596_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-        </div>
-
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-1 col-md-6 mb-4">
-
+        <a href="{{ url_for('search_by_cat', category_name='Cooker')}}">
+          <img src="https://media.4rgos.it/i/Argos/6312596_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
+    </div>
+</div>
+        <!--Grid column-->
+        <div class="col-lg-1 col-md-6 mb-4">
         <!--Image6-->
         <div class="view overlay z-depth-1-half zoom">
-        <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
-          <img src="https://media.4rgos.it/i/Argos/8814030_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-        </div>
-
-      </div>
-      <div class="col-lg-1 col-md-6 mb-4">
-
-        <!--Image7-->
+            <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
+            <img src="https://media.4rgos.it/i/Argos/8814030_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
+    </div>
+</div>
+    <div class="col-lg-1 col-md-6 mb-4">
+         <!--Image7-->
         <div class="view overlay z-depth-1-half zoom">
-         <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
-          <img src="https://media.4rgos.it/i/Argos/8726283_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-         </div>
-      </div>
-      <!--Grid column-->
-
-      <div class="col-lg-1 col-md-6 mb-2">
+            <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
+            <img src="https://media.4rgos.it/i/Argos/8726283_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
+    </div>
+</div>
+        <!--Grid column-->
+        <div class="col-lg-1 col-md-6 mb-2">
 
         <!--Image8-->
         <div class="view overlay z-depth-1-half zoom">
-          <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
-          <img src="https://media.4rgos.it/i/Argos/8939393_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-        </div>
-
+            <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
+            <img src="https://media.4rgos.it/i/Argos/8939393_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
     </div>
+</div>
   
-      <div class="col-lg-1 col-md-6 mb-2">
+    <div class="col-lg-1 col-md-6 mb-2">
 
         <!--Image9-->
         <div class="view overlay z-depth-1-half zoom">
-       <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
-          <img src="https://media.4rgos.it/i/Argos/9147782_R_Z001A_UC1404492?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-        </div>
-      </div>
+            <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
+            <img src="https://media.4rgos.it/i/Argos/9147782_R_Z001A_UC1404492?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image"></a>
+    </div>
+</div>
 
-      <div class="col-lg-1 col-md-6 mb-2">
+        <div class="col-lg-1 col-md-6 mb-2">
 
         <!--Image10-->
         <div class="view overlay z-depth-1-half zoom">
-         <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
-          <img src="https://media.4rgos.it/i/Argos/6876245_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-         </div>
+            <a  href="{{ url_for('search_by_cat', category_name='Pan')}}">
+            <img src="https://media.4rgos.it/i/Argos/6876245_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image"></a>
     </div>
+</div>
 
-  <div class="col-lg-1 col-md-6 mb-2">
+    <div class="col-lg-1 col-md-6 mb-2">
 
         <!--Image11-->
         <div class="view overlay z-depth-1-half zoom">
-          <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
-          <img src="https://media.4rgos.it/i/Argos/6984285_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-        </div>
-  </div>
+            <a  href="{{ url_for('search_by_cat', category_name='Cooker')}}">
+            <img src="https://media.4rgos.it/i/Argos/6984285_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image"></a>
+    </div>
+</div>
    <div class="col-lg-1 col-md-6 mb-2">
 
         <!--Image12-->
         <div class="view overlay z-depth-1-half zoom">
-       <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
-          <img src="https://media.4rgos.it/i/Argos/8193672_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid"
-            alt="item-image" ></a>
-        </div>
-  </div>
-    </div></div>
-</footer>
-<!-- Footer -->
-
-
-    <div class="container col-lg-8 col-sm-12 mt-1">
-      {% block content %} {% endblock %}
+        <a href="{{ url_for('search_by_cat', category_name='Hob')}}">
+        <img src="https://media.4rgos.it/i/Argos/8193672_R_Z001A?w=1500&h=880&qlt=70&fmt=webp" class="img-fluid" alt="item-image" ></a>
     </div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Footer -->
+<div class="container col-lg-8 col-sm-12 mt-1">
+      {% block content %} {% endblock %}
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous">
+      </script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -436,52 +452,39 @@
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous">
-      </script>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <!--Dropdown JS-->
     <script>
-  $( function() {
+    $( function() {
     $( "#menu" ).menu();});
- 
-  
-  </script>
-  
+    </script>
 
-
- <!--UP BUTTON-->
-  <div class="fixed-bottom">
- <a type="action" href="#navbar" id="up" class="btn btn-primary float-right m-2"><i class="fas fa-angle-up"></i></a>
- </div>
+    <!--UP BUTTON-->
+    <div class="fixed-bottom">
+        <a type="action" href="#navbar" id="up" class="btn btn-primary float-right m-2"><i class="fas fa-angle-up"></i></a>
+    </div>
 
 
 <!-- Footer -->
-
-
- <!-- Links -->
- <div class="container col-lg-8 col-sm-12 mt-1">     
-<div class="jumbotron p-1">
-
+<!-- Links -->
+<div class="container col-lg-8 col-sm-12 mt-1">     
+    <div class="jumbotron p-1">
 <footer class="footer" id="sticky-footer">
-   
-   <div class="card text-center">
-  
- <div class="card-body">
-     <a href="http://robbieb.co.uk/#contact" class="btn w-30 mb-1 float" target="_blank"><i class=" fab fa-internet-explorer"></i>  Website</a>
-    <a href="https://github.com/robibrutoczki" class=" btn w-30 mb-1 float" target="_blank"><i class=" fab fa-github"></i> GitHub</a>
-   <a href="https://www.facebook.com/RobbieBWD/" class=" btn w-30 mb-1 float" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-   <a href="https://www.linkedin.com/in/robi-brutoczki-28243a189/" class="btn w-30 float mb-1" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
- 
-  </div>
- <div class="footer-copyright text-center py-3 d-none d-lg-block">© 2020 Copyright:
+    <div class="card text-center">
+<div class="card-body">
+        <a href="http://robbieb.co.uk/#contact" class="btn w-30 mb-1 float" target="_blank"><i class=" fab fa-internet-explorer"></i>  Website</a>
+        <a href="https://github.com/robibrutoczki" class=" btn w-30 mb-1 float" target="_blank"><i class=" fab fa-github"></i> GitHub</a>
+        <a href="https://www.facebook.com/RobbieBWD/" class=" btn w-30 mb-1 float" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.linkedin.com/in/robi-brutoczki-28243a189/" class="btn w-30 float mb-1" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+ </div>
+<div class="footer-copyright text-center py-3 d-none d-lg-block">© 2020 Copyright:
     <a href="http://robbieb.co.uk/#contact">RobbieB</a>
-  </div>
 </div>
- 
-</footer></div></div>
-
+</div>
+ </footer></div></div>
 <!-- Footer -->
-
-
-  </body>
+</body>
 </html>
