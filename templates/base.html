@@ -8,8 +8,9 @@
     <!--Favicon-->
 
     <link rel="icon" type="image/png" href="{{url_for('static', filename='img/Logo50.png')}}">
-
-    <!-- Bootstrap CSS -->
+    <!--Google fonts-->
+   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+   <!-- Bootstrap CSS -->
  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
@@ -24,9 +25,10 @@
   <body>
 
     <!-- -NAVBAR- -->
-    <div class="container-fluid col-sm-12 p-0">
+    <div class="container col-sm-12">
+
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand mx-auto" id="navbar"  href="{{url_for('get_recipes')}}">
+        <a class="navbar-brand" id="navbar"  href="{{url_for('get_recipes')}}">
         <img class="d-block w-100" src="{{url_for('static', filename='img/logo2.png')}}" alt="Logo"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
@@ -192,7 +194,7 @@
 <div class="dropdown-menu">
     <form class="px-4 py-3">
         <div class="alert alert-primary" role="alert">
-            <h5 class="modal-title" id="exampleModalLongTitle"> We're hard at working improving the app,including features like sign in/register-but not quite there yet. Check back soon!</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle"> We're hard at working improving the app,including features like sign in/register - but not quite there yet. Check back soon!</h5>
 </div>
 
 <div class="form-group">
@@ -239,12 +241,12 @@
 
 <div class="modal-body">
     <div class="alert alert-primary" role="alert">
-        We're hard at working improving the app,including features like in-app shopping-but not quite there yet. Check back soon!
+        We're hard at working improving the app,including features like in-app shopping - but not quite there yet. Check back soon!
     </div>
 </div>
 <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        
 </div>
     </div>
   </div>
@@ -322,7 +324,7 @@
 
   <!-- Footer Elements -->
     <div class="container col-12 d-none d-lg-block text-center">
-        <h1 class="display-4 shadow">Visit our shop !</h1>
+        <h3 class="display-6">Visit our shop !</h3>
 
     <!--Grid row-->
     <div class="row no-gutters">

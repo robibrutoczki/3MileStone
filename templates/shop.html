@@ -12,7 +12,7 @@
  </div>
     <div class="card-columns">
         {% for item in shop %}
-    <div class="card rounded">
+    <div class="card">
         <a href="{{ url_for('show_item', item_id=item._id) }}">
             <img
                 src="{{item.item_img}}"

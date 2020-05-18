@@ -5,9 +5,9 @@
 <div class="jumbotron col-12 text-center">
 
             {% if results_total < 2 %}
-                <h3 class="results-text display-3 mb-2">{{results_total}} recipe found</h3>
+                <h3 class="results-text display-4 mb-2">{{results_total}} recipe found:</h3>
             {% else %}
-                <h3 class="results-text display-3 mb-2">{{results_total}} recipes found</h3>
+                <h3 class="results-text display-4 mb-2">{{results_total}} recipes found:</h3>
             {% endif %}
     <div class="card-columns">
             {% for recipe in recipes %}

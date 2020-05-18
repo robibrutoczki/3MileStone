@@ -1,5 +1,5 @@
-body {
-  width: 100%;
+body {font-family: 'Jost', sans-serif;
+   width: 100%;
   background: url("https://images.pexels.com/photos/1437655/pexels-photo-1437655.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
     no-repeat center center fixed;
 
@@ -23,7 +23,7 @@ body {
   background-color: #f8f8f6;
   color: #212323;
 }
-.welcome{height: 100%;}
+
 
 .btn {
   background-color: #f2e3d3;
@@ -77,15 +77,6 @@ h1 {
 
 #welcome {
   height: 70vh;
-
-  background: url("https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-    no-repeat fixed;
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  color: #fff;
 }
 
 
@@ -102,9 +93,31 @@ h1 {
 }
 
 .shadow{
-  text-shadow: 2px 2px green;
+  text-shadow: 2px 2px rgb(43, 12, 221);
 }
 
 #sticky-footer {
   flex-shrink: none;
+}
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ec9333;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
 }
