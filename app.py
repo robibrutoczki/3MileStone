@@ -39,7 +39,7 @@ def get_recipes():
 # Rendering all the recipes on Index.html
 @app.route('/get_index')
 def get_index():
-    return render_template("index.html",
+    return render_template("index2.html",
                            recipes=mongo.db.recipes.find())
 
 # Rendering addrecipe.html

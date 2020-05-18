@@ -1,9 +1,21 @@
  {% extends 'base.html'%}{% block content %}
   <!-- CAROUSEL-->
   
-<div class="container col-lg-8 col-sm-12  mt-1" id="con">
-<div class="row d-flex justify-content-center">
-<div class="jumbotron-fluid col-sm-10">
+<div class="container col-lg-12 col-sm-12  mt-1" id="con">
+<div class="row justify-content-center no-gutters">
+
+<div class="jumbotron col-sm-2 text-center">
+<div class="card welcome" >
+  <img class="card-img-top" src="https://images.pexels.com/photos/4253308/pexels-photo-4253308.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Welcome to MyKitcheN</h5>
+    <p class="card-text">Thanks for checking out MyKitcheN, we hope our recipes make your cooking a little more enjoyable.</p>
+    <a href="{{url_for('get_index')}}" class="btn btn-primary">Go to recipes</a>
+  </div>
+</div></div>
+
+<!-- Carousel-->
+<div class="jumbotron col-sm-8">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -56,14 +68,25 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-  </div></div></div></div>
+  </div></div>
+  <!-- End of CAROUSEL-->
+  <div class="jumbotron col-sm-2 text-center ">
+  <div class="card welcome" >
+  <img class="card-img-top" src="https://images.pexels.com/photos/2432221/pexels-photo-2432221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+  <div class="card-body ">
+    <h5 class="card-title">Welcome to Our shop </h5>
+    <p class="card-text">Enyoy your cookin with new equipments</p>
+    <p class="card-text">Tools,hobs etc ...</p>
+    <a href="{{url_for('get_shop')}}" class="btn btn-primary">Go shopping</a>
+  </div>
+</div></div></div></div>
 <!-- End of CAROUSEL-->
 <footer>
   <div class="container col-12 d-none d-lg-block text-center">
     <!--Grid row-->
     <div class="row no-gutters">
         <!--Grid column-->
-        <div class="col-lg-2 col-md-none  mb-4">
+        <div class="col-lg-2 col-md-none  mb-1">
         <!--Image1-->
         <div class="view overlay m-0 zoom ">
             <a  href="{{url_for('get_index')}}">
@@ -72,7 +95,7 @@
         </div> 
     </div>
         <!--Grid column-->
-        <div class="col-lg-2 col-md-6 mb-4">
+        <div class="col-lg-2 col-md-6 mb-1">
 
         <!--Image-->
         <div class="view overlay m-0 zoom ">
@@ -84,7 +107,7 @@
         </div>
 
         <!--Grid column-->
-        <div class="col-lg-2 col-md-6 mb-4">
+        <div class="col-lg-2 col-md-6 mb-1">
 
         <!--Image-->
         <div class="view overlay m-0 zoom ">
@@ -94,7 +117,7 @@
         </div>
         </div>
         <!--Grid column-->
-        <div class="col-lg-2 col-md-12 mb-4">
+        <div class="col-lg-2 col-md-12 mb-1">
 
         <!--Image-->
         <div class="view overlay m-0 zoom ">
@@ -104,7 +127,7 @@
         </div>
         </div>
         <!--Grid column-->
-        <div class="col-lg-2 col-md-6 mb-4">
+        <div class="col-lg-2 col-md-6 mb-1">
         <!--Image-->
          <div class="view overlay m-0 zoom ">
             <a  href="{{url_for('get_index')}}">
@@ -113,7 +136,7 @@
         </div>
         </div>
         <!--Grid column-->
-        <div class="col-lg-2 col-md-6 mb-4">
+        <div class="col-lg-2 col-md-6 mb-1">
         <!--Image-->
         <div class="view overlay m-0 zoom ">
             <a  href="{{url_for('get_index')}}">
